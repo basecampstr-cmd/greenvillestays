@@ -1,12 +1,36 @@
 # Netlify config for greenvillestays.com (static single-page site)
 [build]
-  publish = "."
-  command = ""
+publish = "."
+command = ""
 
 [[headers]]
-  for = "/*"
-  [headers.values]
-    X-Content-Type-Options = "nosniff"
-    Referrer-Policy = "strict-origin-when-cross-origin"
+for = "/*"
+[headers.values]
+X-Content-Type-Options = "nosniff"
+Referrer-Policy = "strict-origin-when-cross-origin"
 
-# gvlstays.com is added in Netlify as a domain alias set to redirect to greenvillestays.com
+# gvlstays.com is added in Netlify as a domain alias.
+# These host-level rules 301-redirect it (and its www) to the primary domain.
+[[redirects]]
+from = "https://gvlstays.com/*"
+to = "https://greenvillestays.com/:splat"
+status = 301
+force = true
+
+[[redirects]]
+from = "http://gvlstays.com/*"
+to = "https://greenvillestays.com/:splat"
+status = 301
+force = true
+
+[[redirects]]
+from = "https://www.gvlstays.com/*"
+to = "https://greenvillestays.com/:splat"
+status = 301
+force = true
+
+[[redirects]]
+from = "http://www.gvlstays.com/*"
+to = "https://greenvillestays.com/:splat"
+status = 301
+force = true
