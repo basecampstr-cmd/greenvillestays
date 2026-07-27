@@ -1,0 +1,12 @@
+# Netlify config for greenvillestays.com (static single-page site)
+[build]
+  publish = "."
+  command = ""
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+# gvlstays.com is added in Netlify as a domain alias set to redirect to greenvillestays.com
