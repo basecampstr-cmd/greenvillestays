@@ -315,6 +315,26 @@ footer{background:#0e2b10;color:rgba(255,255,255,.68);padding:66px 0 30px}
   .hero-inner{padding-top:80px}
   .cal-day{font-size:12px}
 }
+/* MOBILE SWIPE SLIDERS — card rows scroll horizontally & snap, with a peek of the next card (matches lakehartwellstays) */
+@media(max-width:768px){
+  .cards,.rev-grid,.events-list{
+    display:flex !important;
+    grid-template-columns:none !important;
+    max-width:none;max-height:none;
+    overflow-x:auto;overflow-y:visible;
+    -webkit-overflow-scrolling:touch;
+    scroll-snap-type:x mandatory;
+    gap:14px;
+    margin-left:-24px;margin-right:-24px;
+    padding:2px 24px 16px;
+    scroll-padding-left:24px;
+  }
+  .cards>*,.rev-grid>*,.events-list>*{flex:0 0 82%;scroll-snap-align:start}
+  .cards::-webkit-scrollbar,.rev-grid::-webkit-scrollbar,.events-list::-webkit-scrollbar{height:5px}
+  .cards::-webkit-scrollbar-track,.rev-grid::-webkit-scrollbar-track,.events-list::-webkit-scrollbar-track{background:transparent}
+  .cards::-webkit-scrollbar-thumb,.rev-grid::-webkit-scrollbar-thumb,.events-list::-webkit-scrollbar-thumb{background:rgba(189,139,60,.6);border-radius:3px}
+  .events-list{padding-right:24px}
+}
 </style>
 </head>
 <body>
