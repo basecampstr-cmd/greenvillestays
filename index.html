@@ -863,45 +863,334 @@ const FOOD = {
 };
 
 const EVENTS = [
-  {name:"euphoria Food, Wine & Music Festival",date:"2026-09-17",end:"2026-09-20",venue:"Downtown · Greenville",desc:"The 21st annual four-day celebration of food, wine, and music — 89 culinary events benefiting local nonprofits.",featured:true},
-  {name:"Bank of America Fall for Greenville",date:"2026-10-09",end:"2026-10-11",venue:"Main Street · Greenville",desc:"The Southeast's largest street festival — 200+ food, music, and craft vendors over three free days.",featured:true},
-  {name:"Gran Fondo Hincapie",date:"2026-10-17",venue:"Downtown · Greenville",desc:"George Hincapie's signature timed cycling ride and festival through the Upstate foothills — 15th anniversary.",featured:true},
-  {name:"Artisphere",date:"2027-05-07",end:"2027-05-09",venue:"Downtown · Greenville",desc:"A nationally ranked juried fine-arts festival along the Reedy River with 130+ artists.",featured:true},
-  {name:"Staycation Saturday",date:"2026-08-15",venue:"Trailblazer Park · Travelers Rest",desc:"A beach-themed market day with Caribbean food, live music, and family activities."},
-  {name:"Augustana — 20th Anniversary",date:"2026-08-15",venue:"Peace Center · Greenville",desc:"The indie-rock band performs its debut album in full for its 20th anniversary."},
-  {name:"Andy Frasco & The U.N. with Kitchen Dwellers",date:"2026-08-16",venue:"Peace Center · Greenville",desc:"A high-energy night of funk, jam, and jangle-grass at the Gunter Theatre."},
-  {name:"Folk Craft Day",date:"2026-08-22",venue:"Trailblazer Park · Travelers Rest",desc:"A farmers-market day with live demos from blacksmiths, weavers, woodworkers, and potters."},
-  {name:"Fortune Feimster — Takin' Care of Biscuits",date:"2026-08-28",venue:"Peace Center · Greenville",desc:"Stand-up comedy from the Netflix and TV comedian."},
-  {name:"Victor Wooten & The Wooten Brothers",date:"2026-09-01",venue:"Peace Center · Greenville",desc:"The Grammy-winning bass virtuoso performs with his legendary musical family."},
-  {name:"Gary Clark Jr.",date:"2026-09-02",venue:"Peace Center · Greenville",desc:"The Grammy-winning blues-rock guitarist and singer in concert."},
-  {name:"Indie Craft Parade",date:"2026-09-11",end:"2026-09-13",venue:"Judson Mill · Greenville",desc:"A juried showcase of handmade goods from 100+ regional independent artists."},
-  {name:"Pixies",date:"2026-09-15",venue:"Peace Center · Greenville",desc:"The influential alt-rock pioneers bring their signature sound to Greenville."},
-  {name:"Ray LaMontagne",date:"2026-09-16",venue:"Peace Center · Greenville",desc:"The Grammy-winning singer-songwriter performs an intimate evening of folk-rock."},
-  {name:"Season Finale & Apple Fest",date:"2026-09-19",venue:"Trailblazer Park · Travelers Rest",desc:"The Travelers Rest Farmers Market closes the season with apples, cider, and live music."},
-  {name:"ZZ Top",date:"2026-09-20",venue:"Peace Center · Greenville",desc:"The rock-and-roll Hall of Famers bring their blues-rock classics to Main Street."},
-  {name:"Maybe Happy Ending",date:"2026-09-29",end:"2026-10-04",venue:"Peace Center · Greenville",desc:"The six-time Tony-winning Broadway musical about two helper-bots who find connection."},
-  {name:"Indigo Girls",date:"2026-10-30",venue:"Peace Center · Greenville",desc:"The beloved folk-rock duo performs their harmony-rich catalog live."},
-  {name:"Blackberry Smoke",date:"2026-11-05",venue:"Peace Center · Greenville",desc:"The Atlanta Southern-rock band brings its rootsy sound to Greenville."},
-  {name:"Dirty Dancing – The Musical",date:"2026-11-10",end:"2026-11-15",venue:"Peace Center · Greenville",desc:"The classic love story live on stage, featuring the hit film's iconic music."},
-  {name:"TD Saturday Market",recurring:true,dows:[6],badge:"MKT",dayShort:"SAT",freq:"Sat 8a–12p · thru Oct 31",start:"2026-08-03",until:"2026-10-31",venue:"Main Street · Greenville",desc:"Downtown farmers market with 75+ vendors, produce, crafts, and chef demos."},
-  {name:"Travelers Rest Farmers Market",recurring:true,dows:[6],badge:"MKT",dayShort:"SAT",freq:"Sat 8:30a–12p · thru Sep 19",start:"2026-08-03",until:"2026-09-19",venue:"Trailblazer Park · Travelers Rest",desc:"85+ local vendors with produce, meats, breads, and live bands on the lawn."},
-  {name:"Main Street Fridays",recurring:true,dows:[5],badge:"MUS",dayShort:"FRI",freq:"Fri 5:30–9:30p · thru Sep 25",start:"2026-08-03",until:"2026-09-25",venue:"NOMA Square · Greenville",desc:"Free downtown concert series with food trucks every Friday evening."},
-  {name:"Downtown Alive",recurring:true,dows:[4],badge:"MUS",dayShort:"THU",freq:"Thu 5:30–8:30p · thru Aug 27",start:"2026-08-03",until:"2026-08-27",venue:"NOMA Square · Greenville",desc:"Free Thursday concert series benefiting the Metropolitan Arts Council."},
-  {name:"Greenville State Farmers Market",recurring:true,dows:[2,4,6],badge:"MKT",dayShort:"T/T/S",freq:"Tue/Thu/Sat · year-round",start:"2026-08-03",until:"2026-12-19",venue:"Rutherford Rd · Greenville",desc:"A year-round market with fresh produce, plants, and local goods."},
-  {name:"Greenville Drive Home Games",recurring:true,badge:"BSB",dayShort:"⚾",freq:"Final homestand Aug 25–30",venue:"Fluor Field · Greenville",desc:"The Red Sox High-A affiliate wraps its home season at downtown's Fenway-style ballpark."},
-  {name:"Fidelity Moonlight Movies",recurring:true,badge:"SEP",dayShort:"🎬",freq:"Select nights · September",venue:"Falls Park · Greenville",desc:"Free outdoor movie screenings on the great lawn at Falls Park."},
-  {name:"TR Harvest Market",recurring:true,badge:"OCT",dayShort:"🍎",freq:"Thursday evenings · October",venue:"Trailblazer Park · Travelers Rest",desc:"Evening fall markets with a live concert on the lawn and food trucks."},
-  {name:"Boo in the Zoo",recurring:true,badge:"OCT",dayShort:"🎃",freq:"Late October",venue:"Greenville Zoo · Greenville",desc:"A family-friendly not-so-spooky Halloween event with trick-or-treat stations and animal encounters."},
-  {name:"Euro Auto Festival",recurring:true,badge:"OCT",dayShort:"🚗",freq:"Mid-October",venue:"BMW Zentrum · Greer",desc:"A classic and modern European car show and enthusiast gathering."},
-  {name:"Oktoberfest",recurring:true,badge:"OCT",dayShort:"🍺",freq:"Mid-October",venue:"NOMA Square · Greenville",desc:"A German-style fall celebration with Paulaner brews, brats, pretzels, and live German bands."},
-  {name:"Greenville Craft Beer Festival",recurring:true,badge:"NOV",dayShort:"🍺",freq:"Early November",venue:"Fluor Field · Greenville",desc:"A sampling festival featuring dozens of local and regional breweries."},
-  {name:"Greenville Open Studios",recurring:true,badge:"NOV",dayShort:"🎨",freq:"Early November",venue:"Areawide · Greenville",desc:"A self-guided tour into the working studios of 130+ local artists."},
-  {name:"United Community Ice on Main",recurring:true,badge:"NOV",dayShort:"⛸️",freq:"Mid-Nov – mid-Jan",venue:"Main Street · Greenville",desc:"An outdoor holiday ice-skating rink in the heart of downtown."},
-  {name:"Roper Mountain Holiday Lights",recurring:true,badge:"DEC",dayShort:"🎄",freq:"Late Nov – late Dec",venue:"Roper Mountain · Greenville",desc:"A drive-through display of dazzling holiday light scenes for the whole family."},
-  {name:"Poinsettia Christmas Parade",recurring:true,badge:"DEC",dayShort:"🎅",freq:"Early December",venue:"Main Street · Greenville",desc:"A downtown holiday parade with floats, bands, and Santa to kick off the season."},
-  {name:"VisitGreenville Restaurant Week",recurring:true,badge:"JAN",dayShort:"🍽️",freq:"Mid-January",venue:"Areawide · Greenville",desc:"Prix-fixe menus and specials at nearly 50 area restaurants."},
-  {name:"Reedy River Run",recurring:true,badge:"FEB",dayShort:"🏃",freq:"Late February",venue:"Downtown · Greenville",desc:"A longstanding 10K and 5K road race through downtown Greenville."},
-  {name:"St. Patrick's Day Parade & Festival",recurring:true,badge:"MAR",dayShort:"☘️",freq:"Mid-March",venue:"Main Street · Greenville",desc:"A downtown parade and street festival celebrating St. Patrick's Day."}
+  {
+    "name": "TD Saturday Market",
+    "recurring": true,
+    "dows": [
+      6
+    ],
+    "badge": "MKT",
+    "dayShort": "SAT",
+    "freq": "Sat 8a–12p · thru Oct 31",
+    "start": "2026-08-16",
+    "until": "2026-10-31",
+    "venue": "Main Street · Greenville",
+    "desc": "Downtown farmers market with 75+ vendors, produce, crafts, and chef demos."
+  },
+  {
+    "name": "Travelers Rest Farmers Market",
+    "recurring": true,
+    "dows": [
+      6
+    ],
+    "badge": "MKT",
+    "dayShort": "SAT",
+    "freq": "Sat 8:30a–12p · thru Sep 19",
+    "start": "2026-08-15",
+    "until": "2026-09-19",
+    "venue": "Trailblazer Park · Travelers Rest",
+    "desc": "85+ local vendors with produce, meats, breads, and live bands on the lawn."
+  },
+  {
+    "name": "Main Street Fridays",
+    "recurring": true,
+    "dows": [
+      5
+    ],
+    "badge": "MUS",
+    "dayShort": "FRI",
+    "freq": "Fri 5:30–9:30p · thru Sep 25",
+    "start": "2026-08-14",
+    "until": "2026-09-25",
+    "venue": "NOMA Square · Greenville",
+    "desc": "Free downtown concert series with food trucks every Friday evening."
+  },
+  {
+    "name": "Downtown Alive",
+    "recurring": true,
+    "dows": [
+      4
+    ],
+    "badge": "MUS",
+    "dayShort": "THU",
+    "freq": "Thu 5:30–8:30p · thru Aug 27",
+    "start": "2026-08-13",
+    "until": "2026-08-27",
+    "venue": "NOMA Square · Greenville",
+    "desc": "Free Thursday concert series benefiting the Metropolitan Arts Council."
+  },
+  {
+    "name": "Greenville State Farmers Market",
+    "recurring": true,
+    "dows": [
+      2,
+      4,
+      6
+    ],
+    "badge": "MKT",
+    "dayShort": "T/T/S",
+    "freq": "Tue/Thu/Sat · year-round",
+    "start": "2026-08-12",
+    "until": "2026-12-19",
+    "venue": "Rutherford Rd · Greenville",
+    "desc": "A year-round market with fresh produce, plants, and local goods."
+  },
+  {
+    "name": "Augustana — 20th Anniversary",
+    "date": "2026-08-15",
+    "venue": "Peace Center · Greenville",
+    "desc": "The indie-rock band performs its debut album in full for its 20th anniversary."
+  },
+  {
+    "name": "Staycation Saturday",
+    "date": "2026-08-15",
+    "venue": "Trailblazer Park · Travelers Rest",
+    "desc": "A beach-themed market day with Caribbean food, live music, and family activities."
+  },
+  {
+    "name": "Andy Frasco & The U.N. with Kitchen Dwellers",
+    "date": "2026-08-16",
+    "venue": "Peace Center · Greenville",
+    "desc": "A high-energy night of funk, jam, and jangle-grass at the Gunter Theatre."
+  },
+  {
+    "name": "Folk Craft Day",
+    "date": "2026-08-22",
+    "venue": "Trailblazer Park · Travelers Rest",
+    "desc": "A farmers-market day with live demos from blacksmiths, weavers, woodworkers, and potters."
+  },
+  {
+    "name": "Greenville Drive Home Games",
+    "recurring": true,
+    "badge": "BSB",
+    "dayShort": "⚾",
+    "freq": "Final homestand Aug 25–30",
+    "venue": "Fluor Field · Greenville",
+    "desc": "The Red Sox High-A affiliate wraps its home season at downtown's Fenway-style ballpark."
+  },
+  {
+    "name": "Fortune Feimster — Takin' Care of Biscuits",
+    "date": "2026-08-28",
+    "venue": "Peace Center · Greenville",
+    "desc": "Stand-up comedy from the Netflix and TV comedian."
+  },
+  {
+    "name": "Victor Wooten & The Wooten Brothers",
+    "date": "2026-09-01",
+    "venue": "Peace Center · Greenville",
+    "desc": "The Grammy-winning bass virtuoso performs with his legendary musical family."
+  },
+  {
+    "name": "Gary Clark Jr.",
+    "date": "2026-09-02",
+    "venue": "Peace Center · Greenville",
+    "desc": "The Grammy-winning blues-rock guitarist and singer in concert."
+  },
+  {
+    "name": "Indie Craft Parade",
+    "date": "2026-09-11",
+    "end": "2026-09-13",
+    "venue": "Judson Mill · Greenville",
+    "desc": "A juried showcase of handmade goods from 100+ regional independent artists."
+  },
+  {
+    "name": "Pixies",
+    "date": "2026-09-15",
+    "venue": "Peace Center · Greenville",
+    "desc": "The influential alt-rock pioneers bring their signature sound to Greenville."
+  },
+  {
+    "name": "Ray LaMontagne",
+    "date": "2026-09-16",
+    "venue": "Peace Center · Greenville",
+    "desc": "The Grammy-winning singer-songwriter performs an intimate evening of folk-rock."
+  },
+  {
+    "name": "euphoria Food, Wine & Music Festival",
+    "date": "2026-09-17",
+    "end": "2026-09-20",
+    "venue": "Downtown · Greenville",
+    "desc": "The 21st annual four-day celebration of food, wine, and music — 89 culinary events benefiting local nonprofits.",
+    "featured": true
+  },
+  {
+    "name": "Season Finale & Apple Fest",
+    "date": "2026-09-19",
+    "venue": "Trailblazer Park · Travelers Rest",
+    "desc": "The Travelers Rest Farmers Market closes the season with apples, cider, and live music."
+  },
+  {
+    "name": "ZZ Top",
+    "date": "2026-09-20",
+    "venue": "Peace Center · Greenville",
+    "desc": "The rock-and-roll Hall of Famers bring their blues-rock classics to Main Street."
+  },
+  {
+    "name": "Fidelity Moonlight Movies",
+    "recurring": true,
+    "badge": "SEP",
+    "dayShort": "🎬",
+    "freq": "Select nights · September",
+    "venue": "Falls Park · Greenville",
+    "desc": "Free outdoor movie screenings on the great lawn at Falls Park."
+  },
+  {
+    "name": "Maybe Happy Ending",
+    "date": "2026-09-29",
+    "end": "2026-10-04",
+    "venue": "Peace Center · Greenville",
+    "desc": "The six-time Tony-winning Broadway musical about two helper-bots who find connection."
+  },
+  {
+    "name": "Bank of America Fall for Greenville",
+    "date": "2026-10-09",
+    "end": "2026-10-11",
+    "venue": "Main Street · Greenville",
+    "desc": "The Southeast's largest street festival — 50+ restaurants, 80+ music acts on six stages, and free admission.",
+    "featured": true
+  },
+  {
+    "name": "Gran Fondo Hincapie",
+    "date": "2026-10-17",
+    "venue": "Downtown · Greenville",
+    "desc": "George Hincapie's signature timed cycling ride and festival through the Upstate foothills — 15th anniversary.",
+    "featured": true
+  },
+  {
+    "name": "TR Harvest Market",
+    "recurring": true,
+    "badge": "OCT",
+    "dayShort": "🍎",
+    "freq": "Thursday evenings · October",
+    "venue": "Trailblazer Park · Travelers Rest",
+    "desc": "Evening fall markets with a live concert on the lawn and food trucks."
+  },
+  {
+    "name": "Boo in the Zoo",
+    "recurring": true,
+    "badge": "OCT",
+    "dayShort": "🎃",
+    "freq": "Late October",
+    "venue": "Greenville Zoo · Greenville",
+    "desc": "A family-friendly not-so-spooky Halloween event with trick-or-treat stations and animal encounters."
+  },
+  {
+    "name": "Euro Auto Festival",
+    "recurring": true,
+    "badge": "OCT",
+    "dayShort": "🚗",
+    "freq": "Mid-October",
+    "venue": "BMW Zentrum · Greer",
+    "desc": "A classic and modern European car show and enthusiast gathering."
+  },
+  {
+    "name": "Oktoberfest",
+    "recurring": true,
+    "badge": "OCT",
+    "dayShort": "🍺",
+    "freq": "Mid-October",
+    "venue": "NOMA Square · Greenville",
+    "desc": "A German-style fall celebration with Paulaner brews, brats, pretzels, and live German bands."
+  },
+  {
+    "name": "Indigo Girls",
+    "date": "2026-10-30",
+    "venue": "Peace Center · Greenville",
+    "desc": "The beloved folk-rock duo performs their harmony-rich catalog live."
+  },
+  {
+    "name": "Blackberry Smoke",
+    "date": "2026-11-05",
+    "venue": "Peace Center · Greenville",
+    "desc": "The Atlanta Southern-rock band brings its rootsy sound to Greenville."
+  },
+  {
+    "name": "Dirty Dancing – The Musical",
+    "date": "2026-11-10",
+    "end": "2026-11-15",
+    "venue": "Peace Center · Greenville",
+    "desc": "The classic love story live on stage, featuring the hit film's iconic music."
+  },
+  {
+    "name": "Greenville Craft Beer Festival",
+    "recurring": true,
+    "badge": "NOV",
+    "dayShort": "🍺",
+    "freq": "Early November",
+    "venue": "Fluor Field · Greenville",
+    "desc": "A sampling festival featuring dozens of local and regional breweries."
+  },
+  {
+    "name": "Greenville Open Studios",
+    "recurring": true,
+    "badge": "NOV",
+    "dayShort": "🎨",
+    "freq": "Early November",
+    "venue": "Areawide · Greenville",
+    "desc": "A self-guided tour into the working studios of 130+ local artists."
+  },
+  {
+    "name": "United Community Ice on Main",
+    "recurring": true,
+    "badge": "NOV",
+    "dayShort": "⛸️",
+    "freq": "Mid-Nov – mid-Jan",
+    "venue": "Main Street · Greenville",
+    "desc": "An outdoor holiday ice-skating rink in the heart of downtown."
+  },
+  {
+    "name": "Roper Mountain Holiday Lights",
+    "recurring": true,
+    "badge": "DEC",
+    "dayShort": "🎄",
+    "freq": "Late Nov – late Dec",
+    "venue": "Roper Mountain · Greenville",
+    "desc": "A drive-through display of dazzling holiday light scenes for the whole family."
+  },
+  {
+    "name": "Poinsettia Christmas Parade",
+    "recurring": true,
+    "badge": "DEC",
+    "dayShort": "🎅",
+    "freq": "Early December",
+    "venue": "Main Street · Greenville",
+    "desc": "A downtown holiday parade with floats, bands, and Santa to kick off the season."
+  },
+  {
+    "name": "VisitGreenville Restaurant Week",
+    "recurring": true,
+    "badge": "JAN",
+    "dayShort": "🍽️",
+    "freq": "Mid-January",
+    "venue": "Areawide · Greenville",
+    "desc": "Prix-fixe menus and specials at nearly 50 area restaurants."
+  },
+  {
+    "name": "Reedy River Run",
+    "recurring": true,
+    "badge": "FEB",
+    "dayShort": "🏃",
+    "freq": "Late February",
+    "venue": "Downtown · Greenville",
+    "desc": "A longstanding 10K and 5K road race through downtown Greenville."
+  },
+  {
+    "name": "St. Patrick's Day Parade & Festival",
+    "recurring": true,
+    "badge": "MAR",
+    "dayShort": "☘️",
+    "freq": "Mid-March",
+    "venue": "Main Street · Greenville",
+    "desc": "A downtown parade and street festival celebrating St. Patrick's Day."
+  },
+  {
+    "name": "Artisphere",
+    "date": "2027-05-07",
+    "end": "2027-05-09",
+    "venue": "Downtown · Greenville",
+    "desc": "A nationally ranked juried fine-arts festival along the Reedy River with 130+ artists.",
+    "featured": true
+  }
 ];
 
 const FAQ = [
