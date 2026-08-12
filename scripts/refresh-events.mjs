@@ -5,7 +5,7 @@
 
 import { readFileSync, writeFileSync } from "node:fs";
 
-const API_KEY = process.env.ANTHROPIC_API_KEY;
+const API_KEY = (process.env.ANTHROPIC_API_KEY || "").trim();
 if (!API_KEY) { console.error("Missing ANTHROPIC_API_KEY secret."); process.exit(1); }
 
 // Try these models in order (first that works wins). Override with the
@@ -71,7 +71,11 @@ async function callModel(model) {
 let text = null, lastErr = null;
 for (const model of MODELS) {
   try { console.log(`Calling ${model}...`); text = await callModel(model); console.log(`OK (${model})`); break; }
-  catch (e) { console.error(`Model ${model} failed: ${e.message}`); lastErr = e; }
+  catch (e) {
+    const cause = e && e.cause ? ` | cause: ${e.cause.code || ""} ${e.cause.message || e.cause}` : "";
+    console.error(`Model ${model} failed: ${e.message}${cause}`);
+    lastErr = e;
+  }
 }
 if (text === null) { console.error("All models failed. Last error:", lastErr?.message); process.exit(1); }
 
