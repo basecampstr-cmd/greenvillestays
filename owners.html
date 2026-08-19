@@ -285,6 +285,44 @@ footer{background:#0e260b;color:rgba(255,255,255,.7);padding:56px 0 30px}
   .launch-ribbon .lr-badge{font-size:18px}
   .launch-ribbon .lr-txt{font-size:13.5px}
 }
+.sticky-cta{transition:transform .3s}
+.sticky-cta.hide{transform:translateY(130%)}
+
+/* ===== DESKTOP FLOATING SIDE RAIL ===== */
+.side-rail{display:none;position:fixed;right:22px;bottom:22px;z-index:60;width:308px;
+  background:var(--forest);color:#fff;border:1px solid rgba(231,201,138,.35);border-radius:16px;
+  padding:20px 18px 16px;box-shadow:0 22px 54px rgba(20,54,16,.4);
+  opacity:0;transform:translateY(16px);transition:opacity .3s,transform .3s;pointer-events:none}
+.side-rail.show{opacity:1;transform:none;pointer-events:auto}
+.side-rail .sr-badge{position:absolute;top:-15px;left:18px;background:var(--gold);color:#231a06;
+  font-family:'Oswald',sans-serif;font-weight:700;font-size:16px;letter-spacing:.02em;padding:4px 13px;border-radius:8px}
+.side-rail .sr-close{position:absolute;top:9px;right:11px;background:transparent;border:none;
+  color:rgba(255,255,255,.55);font-size:19px;line-height:1;cursor:pointer;padding:2px 6px}
+.side-rail .sr-close:hover{color:#fff}
+.side-rail .sr-body{margin:10px 0 15px}
+.side-rail .sr-body b{font-family:'Zilla Slab',serif;font-weight:600;font-size:1.18rem;color:#fff;display:block;margin-bottom:5px}
+.side-rail .sr-body span{font-size:13.5px;color:rgba(255,255,255,.82);line-height:1.5}
+.side-rail .sr-cta{display:block;text-align:center;background:var(--gold);color:#231a06;
+  font-family:'Oswald',sans-serif;font-weight:600;font-size:13px;letter-spacing:.05em;text-transform:uppercase;
+  padding:12px;border-radius:100px;transition:background .2s}
+.side-rail .sr-cta:hover{background:var(--gold-lt)}
+@media(min-width:901px){.side-rail{display:block}}
+
+/* ===== MOBILE SWIPE SLIDERS ===== */
+@media(max-width:768px){
+  .fgrid,.res-grid,.rev-grid,.lp-grid{
+    display:flex;flex-wrap:nowrap;overflow-x:auto;gap:16px;
+    scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:thin;
+    margin:0 -24px;padding:6px 24px 18px}
+  .fgrid>*,.res-grid>*,.rev-grid>*,.lp-grid>*{flex:0 0 80%;scroll-snap-align:start}
+  .fgrid::-webkit-scrollbar,.res-grid::-webkit-scrollbar,.rev-grid::-webkit-scrollbar,.lp-grid::-webkit-scrollbar{height:6px}
+  .fgrid::-webkit-scrollbar-thumb,.res-grid::-webkit-scrollbar-thumb,.rev-grid::-webkit-scrollbar-thumb,.lp-grid::-webkit-scrollbar-thumb{background:var(--gold);border-radius:100px}
+  .fgrid::-webkit-scrollbar-track,.res-grid::-webkit-scrollbar-track,.rev-grid::-webkit-scrollbar-track,.lp-grid::-webkit-scrollbar-track{background:transparent}
+  .swipe-hint{display:block;text-align:center;font-family:'Oswald',sans-serif;font-size:11px;
+    letter-spacing:.12em;text-transform:uppercase;color:var(--gold-dk);margin:-18px 0 16px}
+  .section.launch .swipe-hint,.section.forest .swipe-hint{color:var(--gold-lt)}
+}
+.swipe-hint{display:none}
 </style>
 </head>
 <body>
@@ -389,6 +427,7 @@ footer{background:#0e260b;color:rgba(255,255,255,.7);padding:56px 0 30px}
       <h2>Six Things We Do That Change the Outcome</h2>
       <p>Owner returns are downstream of guest experience. We start there — and build everything else around it.</p>
     </div>
+    <div class="swipe-hint">Swipe to explore →</div>
     <div class="fgrid">
       <div class="fcard">
         <div class="fnum">01</div>
@@ -480,6 +519,7 @@ footer{background:#0e260b;color:rgba(255,255,255,.7);padding:56px 0 30px}
       <h2>Real Homes. Real Numbers.</h2>
       <p>A few Upstate homes we took from ordinary to top-performing.</p>
     </div>
+    <div class="swipe-hint">Swipe to explore →</div>
     <div class="res-grid">
       <div class="res">
         <div class="rn">$110K</div>
@@ -528,6 +568,7 @@ footer{background:#0e260b;color:rgba(255,255,255,.7);padding:56px 0 30px}
       <h2>What Guests Say About Our Homes</h2>
       <p>Owner returns start with guests who leave five stars — and come back.</p>
     </div>
+    <div class="swipe-hint">Swipe reviews →</div>
     <div class="rev-grid">
       <div class="review"><div class="stars">★★★★★</div><p>"We were tucked away in the mountains, yet still just a short drive from downtown — the perfect balance. We would definitely stay here again!"</p><div class="who">Girls Trip · June 2026</div><div class="prop">Saluda River Basecamp</div></div>
       <div class="review"><div class="stars">★★★★★</div><p>"We cooked outdoors, used the hot tub and sauna, tried the cold plunge, played pool, and sat by the fire pit down near the river. Just a wonderful time."</p><div class="who">Concert Weekend · May 2026</div><div class="prop">Saluda River Basecamp</div></div>
@@ -545,6 +586,7 @@ footer{background:#0e260b;color:rgba(255,255,255,.7);padding:56px 0 30px}
       <h2>Up to $5,000 to launch your home right.</h2>
       <p>When you list a qualifying home with us, you choose one Launch Package — our investment in getting your property earning at its full potential from day one. Pick the one that fits your home.</p>
     </div>
+    <div class="swipe-hint">Swipe packages →</div>
     <div class="lp-grid">
       <div class="lp-card">
         <div class="lp-ic">🌿</div>
@@ -631,11 +673,46 @@ footer{background:#0e260b;color:rgba(255,255,255,.7);padding:56px 0 30px}
   </div>
 </footer>
 
+<!-- DESKTOP FLOATING SIDE RAIL -->
+<div class="side-rail" id="sideRail" role="complementary" aria-label="Basecamp Launch Package offer">
+  <button class="sr-close" id="srClose" aria-label="Dismiss offer">&times;</button>
+  <div class="sr-badge">$5,000</div>
+  <div class="sr-body">
+    <b>Basecamp Launch Package</b>
+    <span>See if your home qualifies — get a free income projection &amp; your package options.</span>
+  </div>
+  <a href="#estimate" class="sr-cta">Get my free projection →</a>
+</div>
+
 <!-- STICKY MOBILE CTA -->
-<a href="#estimate" class="sticky-cta" aria-label="Get your free projection and five thousand dollar Launch Package options">
+<a href="#estimate" class="sticky-cta" id="stickyCta" aria-label="Get your free projection and five thousand dollar Launch Package options">
   <span class="sc-txt"><b>$5,000 Launch Package</b><br>See if your home qualifies</span>
   <span class="sc-btn">Free Projection →</span>
 </a>
+
+<!-- Sticky CTA visibility control -->
+<script>
+(function(){
+  var rail=document.getElementById('sideRail');
+  var sticky=document.getElementById('stickyCta');
+  var closeBtn=document.getElementById('srClose');
+  var railClosed=false;
+  if(closeBtn){closeBtn.addEventListener('click',function(){railClosed=true;if(rail)rail.classList.remove('show');});}
+  function update(){
+    var y=window.pageYOffset||document.documentElement.scrollTop;
+    var est=document.getElementById('estimate');
+    var nearForm=false;
+    if(est){var r=est.getBoundingClientRect();nearForm=r.top < window.innerHeight*0.85 && r.bottom>0;}
+    // Desktop side rail: appear after the hero, hide once the form is on screen
+    if(rail){ if(y>560 && !nearForm && !railClosed){rail.classList.add('show');} else {rail.classList.remove('show');} }
+    // Mobile sticky bar: hide when the form is on screen so it never covers the fields
+    if(sticky){ if(nearForm){sticky.classList.add('hide');} else {sticky.classList.remove('hide');} }
+  }
+  window.addEventListener('scroll',update,{passive:true});
+  window.addEventListener('resize',update,{passive:true});
+  update();
+})();
+</script>
 
 <!-- GoHighLevel form embed -->
 <script src="https://link.basecampgetaways.com/js/form_embed.js"></script>
