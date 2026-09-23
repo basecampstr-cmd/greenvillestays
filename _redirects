@@ -1,0 +1,6 @@
+# Owner mailer / QR traffic goes to the one consolidated offer page.
+# ?m= tells that page which tracking number to show and tags the GHL lead.
+# 302 (temporary) on purpose, so this is reversible.
+/owners       https://basecampgetaways.com/offer?m=greenville   302
+/owners/      https://basecampgetaways.com/offer?m=greenville   302
+/owners.html  https://basecampgetaways.com/offer?m=greenville   302
