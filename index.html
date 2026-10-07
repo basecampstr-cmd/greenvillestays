@@ -335,6 +335,9 @@ footer{background:#0e2b10;color:rgba(255,255,255,.68);padding:66px 0 30px}
   .cards::-webkit-scrollbar-thumb,.rev-grid::-webkit-scrollbar-thumb,.events-list::-webkit-scrollbar-thumb{background:rgba(189,139,60,.6);border-radius:3px}
   .events-list{padding-right:24px}
 }
+
+#ownerForm .ep-wrapper,#ownerForm .ep-iFrameContainer{height:auto !important;overflow:visible !important}
+#ownerForm iframe[data-form-id]{position:static !important;left:auto !important;top:auto !important;opacity:1 !important;visibility:visible !important;pointer-events:auto !important;width:100% !important;display:block !important}
 </style>
 </head>
 <body>
@@ -1421,5 +1424,39 @@ document.getElementById('searchForm').addEventListener('submit',e=>{
 </script>
 <!-- GoHighLevel form embed (owner revenue-projection form) -->
 <script src="https://link.basecampgetaways.com/js/form_embed.js"></script>
+<script>
+(function () {
+  var f = document.querySelector('#ownerForm iframe[data-form-id]');
+  if (!f) return;
+  function floorH() { return window.innerWidth <= 820 ? 1650 : 1300; }
+  function setH(px) { f.style.setProperty('height', Math.round(px) + 'px', 'important'); }
+  function reveal() {
+    f.style.setProperty('position', 'static', 'important');
+    f.style.setProperty('left', 'auto', 'important');
+    f.style.setProperty('top', 'auto', 'important');
+    f.style.setProperty('opacity', '1', 'important');
+    f.style.setProperty('visibility', 'visible', 'important');
+    f.style.setProperty('pointer-events', 'auto', 'important');
+    f.style.setProperty('width', '100%', 'important');
+    var p = f.parentElement, g = p && p.parentElement;
+    [p, g].forEach(function (el) {
+      if (el && /ep-/.test(el.className || '')) el.style.setProperty('height', 'auto', 'important');
+    });
+  }
+  var sized = false;
+  reveal(); setH(floorH());
+  window.addEventListener('message', function (e) {
+    if (!/leadconnector|basecampgetaways/.test(e.origin || '')) return;
+    var d = typeof e.data === 'string' ? e.data : '';
+    if (d.indexOf('[iFrameSizer]') !== 0) return;
+    var m = d.match(/\[iFrameSizer\][^:]*:([0-9.]+):/);
+    if (m) { var h = parseFloat(m[1]); if (h > 500) { sized = true; setH(h + 24); } }
+    reveal();
+  }, false);
+  var t = setInterval(function () { reveal(); if (!sized) setH(floorH()); }, 400);
+  setTimeout(function () { clearInterval(t); }, 20000);
+  window.addEventListener('resize', function () { if (!sized) setH(floorH()); });
+})();
+</script>
 </body>
 </html>
